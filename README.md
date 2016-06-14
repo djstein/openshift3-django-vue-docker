@@ -21,6 +21,7 @@ The following changes have been made in comparison to the standard Django applic
 * The Django ``STATIC_ROOT`` setting is set so that Django static files will be collected together and placed in the ``static`` directory.
 * The Django ``LOGGING`` setting has been set up to send Django logging to standard error so that details of exceptions can be captured.
 * The Django ``ALLOWED_HOSTS`` setting has been set to allow external connections.
+* The Django ``MIDDLEWARE_CLASSES`` settings has been modified to add ``WhiteNoise`` middleware for hosting of static files.
 * Add a Django handler for handling requests against the site.
 
 In addition, the ``.s2i/environment`` file has been created to allow environment variables to be set to override the behaviour of the default S2I builder for Python.
