@@ -1,15 +1,17 @@
+{% load render_bundle from webpack_loader %}
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <title>Vue.js + Django</title>
+    {% render_bundle 'main' 'css' %}
   </head>
   
   <body>
-    <h1>HELLO</h1>
-    <img src="{% static 'django.png' %}"
+    <img src="{% static 'django.png'%}"/>
     <div id="app"></div>
+    {% render_bundle 'main' 'js' %}
   </body>
 
 </html>

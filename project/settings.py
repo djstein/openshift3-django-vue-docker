@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'webpack_loader',
     'appname',
 ]
 
@@ -143,3 +144,11 @@ LOGGING = {
         },
     },
 }
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'static/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'vueapp', 'webpack-stats.json')
+    }
+}
+
