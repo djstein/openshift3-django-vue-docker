@@ -43,7 +43,7 @@ The ``DJANGO_SECRET_KEY`` environment variable should be set to a suitably long 
 If using the ``oc`` command line tool instead of the OpenShift web console, to deploy this sample Python web application, you can run:
 
 ```
-oc new-app https://gitlab.com/osevg/python-django-gunicorn.git --env DJANGO_SECRET_KEY='...'
+oc new-app https://github.com/djstein/openshift-django-docker.git --env DJANGO_SECRET_KEY='...'
 ```
 
 In this case, because no language type was specified, OpenShift will determine the language by inspecting the code repository. Because the code repository contains a ``requirements.txt``, it will subsequently be interpreted as including a Python application. When such automatic detection is used, ``python:latest`` will be used.
@@ -51,7 +51,7 @@ In this case, because no language type was specified, OpenShift will determine t
 If needing to select a specific Python version when using ``oc new-app``, you should instead use the form:
 
 ```
-oc new-app python:2.7~https://gitlab.com/osevg/python-django-gunicorn.git  --env DJANGO_SECRET_KEY='...'
+oc new-app python:2.7~https://github.com/djstein/openshift-django-docker.git  --env DJANGO_SECRET_KEY='...'
 ```
 
 For this sample application the database will not be initialised automatically and this must be done manually. Further, no super user account will be created.
