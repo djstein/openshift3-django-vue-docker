@@ -1,5 +1,4 @@
 {% load render_bundle from webpack_loader %}
-{% load staticfiles %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +8,6 @@
   </head>
   
   <body>
-    <img src="{% static 'django.png'%}"/>
     <div id="app"></div>
     {% render_bundle 'main' 'js' %}
   </body>
