@@ -12,23 +12,3 @@ oc new-app https://gitlab.com/osevg/python-django-gunicorn.git --env DJANGO_SECR
 ## Connection to PostgreSQL Database
 TODO
 
-
-
-In this case, because no language type was specified, OpenShift will determine the language by inspecting the code repository. Because the code repository contains a ``requirements.txt``, it will subsequently be interpreted as including a Python application. When such automatic detection is used, ``python:latest`` will be used.
-
-If needing to select a specific Python version when using ``oc new-app``, you should instead use the form:
-
-```
-oc new-app python:2.7~https://gitlab.com/osevg/python-django-gunicorn.git  --env DJANGO_SECRET_KEY='...'
-```
-
-For this sample application the database will not be initialised automatically and this must be done manually. Further, no super user account will be created.
-
-To initialise the database and create the super user you will need to access the running container for the application using an interactive shell and manually run:
-
-```
-python manage.py migrate
-python manage.py createsuperuser
-```
-
-You will then be able to login into the Django admin interface for the application.
